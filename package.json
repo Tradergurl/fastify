@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "rm -rf node_modules/.cache",
     "build": "tsc",
     "start": "node dist/server.js"
   },
