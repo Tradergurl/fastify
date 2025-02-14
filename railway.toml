@@ -1,7 +1,9 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm ci --omit=dev && rm -rf node_modules/.cache && npm run build"
+buildCommand = "npm run build"
 
 [deploy]
-startCommand = "node dist/server.js"
+startCommand = "npm start"
+healthcheckPath = "/"
+restartPolicyType = "on-failure"
 nodeVersion = "22.10.0"
