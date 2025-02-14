@@ -1,7 +1,10 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm ci --prefer-offline --no-audit && npm run build"
+buildCommand = "npm ci --omit=dev && npm run build"
 
 [deploy]
-startCommand = "pwd && ls -l && node dist/server.js"
+startCommand = "node dist/server.js"
 nodeVersion = "22.10.0"
+
+[variables]
+NPM_CONFIG_CACHE = "false"
